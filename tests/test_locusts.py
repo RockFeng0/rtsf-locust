@@ -1,7 +1,7 @@
 #! python3
 # -*- encoding: utf-8 -*-
 '''
-Current module: httpdriverlocust.__about__
+Current module: tests.test_locusts
 
 Rough version history:
 v1.0    Original version to use
@@ -9,8 +9,8 @@ v1.0    Original version to use
 ********************************************************************
     @AUTHOR:  Administrator-Bruce Luo(罗科峰)
     MAIL:     luokefeng@163.com
-    RCS:      httpdriverlocust.__about__,  v1.0 2018年10月23日
-    FROM:   2018年10月23日
+    RCS:      tests.test_locusts,  v1.0 2018年10月24日
+    FROM:   2018年10月24日
 ********************************************************************
 ======================================================================
 
@@ -18,12 +18,15 @@ Provide a function for the automation test
 
 '''
 
+import unittest, os
+from httplocust import locusts
 
-__title__           = "rtsf-locust"
-__short_desc__      = "http(s) stress testing, base on rtsf"
-__version__         = 1.0
-__autor__           = u"罗科峰"
-__author_email__    = "lkf20031988@163.com"
-__license__         = 'MIT'
-
-HOME_PAGE           = "https://github.com/RockFeng0/rtsf-locust"
+class TestLocusts(unittest.TestCase):
+    
+    def test_parse_locustfile(self):
+        f = locusts.parse_locustfile(r'data\case_model.yaml')
+        print(f)
+        self.assertTrue(os.path.isfile(f))
+        
+if __name__ == "__main__":
+    unittest.main()

@@ -1,7 +1,7 @@
 #coding: utf-8
 import zmq
 from locust import HttpLocust, TaskSet, task
-from httprunner.task import LocustTask
+from httplocust.task import LocustTask
 
 class WebPageTasks(TaskSet):
     def on_start(self):

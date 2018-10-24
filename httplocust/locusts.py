@@ -1,7 +1,7 @@
 #! python3
 # -*- encoding: utf-8 -*-
 '''
-Current module: httpdriverlocust.locusts
+Current module: httplocust.locusts
 
 Rough version history:
 v1.0    Original version to use
@@ -9,7 +9,7 @@ v1.0    Original version to use
 ********************************************************************
     @AUTHOR:  Administrator-Bruce Luo(罗科峰)
     MAIL:     luokefeng@163.com
-    RCS:      httpdriverlocust.locusts,  v1.0 2018年10月23日
+    RCS:      httplocust.locusts,  v1.0 2018年10月23日
     FROM:   2018年10月23日
 ********************************************************************
 ======================================================================
@@ -55,12 +55,12 @@ def gen_locustfile(testcase_file_path):
     locustfile_path = 'locustfile.py'
     template_path = os.path.join(
         os.path.dirname(os.path.realpath(__file__)),
-        "templates",
+        "template",
         "locustfile_template"
     )
-    YamlCaseLoader.load_dependencies()
+    YamlCaseLoader.load_dependencies(testcase_file_path)
     testset = YamlCaseLoader.load_file(testcase_file_path)
-    host = testset.get("config", {}).get("request", {}).get("base_url", "")
+    host = testset.get("project", {}).get("locust", {}).get("host", "")
 
     with io.open(template_path, encoding='utf-8') as template:
         with io.open(locustfile_path, 'w', encoding='utf-8') as locustfile:
