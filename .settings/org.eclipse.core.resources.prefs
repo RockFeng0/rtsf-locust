@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+encoding//httplocust/task.py=utf-8
+encoding//tests/test_locusts.py=utf-8
+encoding/locustfile.py=utf-8

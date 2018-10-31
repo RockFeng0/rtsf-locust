@@ -2,25 +2,27 @@
 - project:
     name: 保姆招商线索流程-locust
     module: 保姆招商线索流程
-#    data:
-#      - csv: url_title.csv
+    data:
+      - csv: projects.csv
     
 - case:
-    name: /ss
+    name: index.html_$project_name
     steps:
         - request:
-            url: http://bztest.djtest.cn/         
+            url: https://pypi.org/
             method: GET
     verify:
         - ${VerifyCode(200)}
-        - ${VerifyContain(good)}
         
 - case:
-    name: /background
+    name: search-$project_name
+    glob_var:
+      expected_result: <title>Search results
     steps:
         - request:
-            url: http://bztest.djtest.cn/background/pass/306438329074646
+            url: https://pypi.org/search/?q=$project_name
             method: GET
     verify:
         - ${VerifyCode(200)}
-        - ${VerifyContain(成功)}
+        - ${VerifyContain($expected_result)}
+     
