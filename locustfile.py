@@ -17,4 +17,4 @@ class WebPageUser(HttpLocust):
     min_wait = 1000
     max_wait = 5000
 
-    file_path = r"C:\d_disk\auto\git\rtsf-locust\tests\data\test_locust.yaml"
+    file_path = r"D:\auto\github_repo\rtsf-locust\tests\data\test_locust.yaml"
