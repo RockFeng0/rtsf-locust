@@ -24,8 +24,7 @@ from httplocust import locusts
 class TestLocusts(unittest.TestCase):
     
     def test_parse_locustfile(self):
-        f = locusts.parse_locustfile(r'data\case_model.yaml')
-        print(f)
+        f = locusts.parse_locustfile(r'data\test_locust.yaml')        
         self.assertTrue(os.path.isfile(f))
         
 if __name__ == "__main__":

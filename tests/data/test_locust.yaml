@@ -1,0 +1,26 @@
+            
+- project:
+    name: 保姆招商线索流程-locust
+    module: 保姆招商线索流程
+#    data:
+#      - csv: url_title.csv
+    
+- case:
+    name: /ss
+    steps:
+        - request:
+            url: http://bztest.djtest.cn/         
+            method: GET
+    verify:
+        - ${VerifyCode(200)}
+        - ${VerifyContain(good)}
+        
+- case:
+    name: /background
+    steps:
+        - request:
+            url: http://bztest.djtest.cn/background/pass/306438329074646
+            method: GET
+    verify:
+        - ${VerifyCode(200)}
+        - ${VerifyContain(成功)}
