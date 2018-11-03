@@ -24,23 +24,13 @@ class UserBehavior(TaskSet):
    
     @task()
     def t_rtsf(self):
-        self.client.get('/search/?q=rtsf')
+        for i in ("rtsf","rtsf-web","rtsf-http","rtsf-win","rtsf-app"):
+            with self.client.get('/search/?q={}'.format(i),catch_response=True) as resp:
+                if '<title>Search results' in resp.text:            
+                    resp.success()
+                else:
+                    resp.failure('no title')
     
-    @task()
-    def t_rtsf_http(self):
-        self.client.get('/search/?q=rtsf-http')
-
-    @task()
-    def t_rtsf_web(self):
-        self.client.get('/search/?q=rtsf-web')
-        
-    @task()
-    def t_rtsf_app(self):
-        self.client.get('/search/?q=rtsf-app')
-        
-    @task()
-    def t_rtsf_win(self):
-        self.client.get('/search/?q=rtsf-win')
     
 
 class WebsiteUser(HttpLocust):

@@ -4,15 +4,6 @@
     module: 保姆招商线索流程
     data:
       - csv: projects.csv
-    
-- case:
-    name: index.html_$project_name
-    steps:
-        - request:
-            url: https://pypi.org/
-            method: GET
-    verify:
-        - ${VerifyCode(200)}
         
 - case:
     name: search-$project_name
