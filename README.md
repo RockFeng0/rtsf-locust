@@ -66,5 +66,5 @@ rtsf-win
 rtsf-web
 ```
 
-![hlocust-demo.png](https://raw.githubusercontent.com/RockFeng0/img-folder/master/rtsf-locust-img/hlocust-demo.png)
+![hlocust-demo.gif](https://raw.githubusercontent.com/RockFeng0/img-folder/master/rtsf-locust-img/hlocust-demo.gif)
 
