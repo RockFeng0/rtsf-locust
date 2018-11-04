@@ -1,4 +1,5 @@
 #coding: utf-8
+# this template reference from httprunner
 import zmq
 from locust import HttpLocust, TaskSet, task
 from httplocust.task import LocustTask
@@ -17,4 +18,4 @@ class WebPageUser(HttpLocust):
     min_wait = 1000
     max_wait = 5000
 
-    file_path = "$TESTCASE_FILE"
+    file_path = r"$TESTCASE_FILE"

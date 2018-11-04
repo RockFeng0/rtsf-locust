@@ -14,7 +14,7 @@ v1.0    Original version to use
 ********************************************************************
 ======================================================================
 
-Provide a function for the automation test
+this module reference from httprunner
 
 '''
 
@@ -58,6 +58,7 @@ def gen_locustfile(testcase_file_path):
         "template",
         "locustfile_template"
     )
+    
     YamlCaseLoader.load_dependencies(testcase_file_path)
     testset = YamlCaseLoader.load_file(testcase_file_path)
     host = testset.get("project", {}).get("locust", {}).get("host", "")

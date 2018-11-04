@@ -14,7 +14,7 @@ v1.0    Original version to use
 ********************************************************************
 ======================================================================
 
-Provide a function for the automation test
+this module reference from httprunner 
 
 '''
 
@@ -22,7 +22,6 @@ Provide a function for the automation test
 import sys, multiprocessing
 from rtsf.p_applog import logger
 from httplocust import locusts
-    
 
 def main_locust():
     """ Performance test with locust: parse command line options and run commands.
