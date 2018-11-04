@@ -20,7 +20,7 @@ Provide a function for the automation test
 
 
 __title__           = "rtsf-locust"
-__short_desc__      = "http(s) stress testing, base on rtsf"
+__short_desc__      = "http(s) load testing, base on locust and rtsf-http"
 __version__         = "1.0"
 __autor__           = u"罗科峰"
 __author_email__    = "lkf20031988@163.com"
