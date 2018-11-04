@@ -84,7 +84,10 @@ setup(
         url=__about__.HOME_PAGE,
         license=__about__.__license__,
         python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4',
-        packages=find_packages(exclude=()),        
+        packages=find_packages(exclude=()),
+        package_data={
+            'httplocust': ["templates/*"],
+        },
         keywords='test http api https',
         install_requires=install_requires,
 #         dependency_links=dependency_links,
